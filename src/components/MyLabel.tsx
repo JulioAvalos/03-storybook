@@ -1,4 +1,5 @@
 import './mylabel.css';
+import { AllCaps } from '../stories/components/MyLabel.stories';
 
 export interface MyLabelProps {
   
@@ -10,15 +11,25 @@ export interface MyLabelProps {
    * How large should the label be?
    */
   size: 'normal' | 'h1' | 'h2' | 'h3';
+  /**
+   * Should all label content be captalize?
+   */
+  allCaps?: boolean;
+  /*
+   * Basic label colors
+   */
+  color?: 'primary' | 'secondary' | 'tertiary'
 }
 
 export const MyLabel = ({
-  label = 'No Label', 
-  size = 'normal'
+  label = 'No Label',
+  size = 'normal',
+  allCaps = false,
+  color = 'primary'
 }: MyLabelProps) => {
   return (
-    <span className={`${ size }`}>
-        {label}
+    <span className={`${ size } text-${color}`}>
+        {allCaps ? label.toUpperCase() : label}
     </span>
   )
 }
