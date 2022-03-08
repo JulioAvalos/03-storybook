@@ -1,7 +1,14 @@
 import './mylabel.css';
 
 export interface MyLabelProps {
+  
+  /**
+   * Label Content
+   */
   label: string;
+  /**
+   * How large should the label be?
+   */
   size: 'normal' | 'h1' | 'h2' | 'h3';
 }
 
